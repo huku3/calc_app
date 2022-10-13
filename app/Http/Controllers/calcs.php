@@ -6,13 +6,22 @@ use Illuminate\Http\Request;
 
 class calcs extends Controller
 {
-    public function result($num1,$num2)
+    public function result($num1, $operator, $num2)
     {
-    echo $num1 + $num2;
-        return view('addition.calcs', ['num1' => $num1, 'num2' => $num2]);
-
-        return view('subtraction', ['num1' => $num1, 'num2' => $num2]);
-        return view('multiplication', ['num1' => $num1, 'num2' => $num2]);
-        return view('division', ['num1' => $num1, 'num2' => $num2]);
+        switch ($operator) {
+            case 'addition':
+                $result = $num1 + $num2;
+                break;
+            case 'subtraction':
+                $result = $num1 - $num2;
+                break;
+            case 'multiplication':
+                $result = $num1 * $num2;
+                break;
+            case 'division':
+                $result = $num1 / $num2;
+                break;
+        }
+        return view('result', ['kekka' => $result]);
     }
 }
