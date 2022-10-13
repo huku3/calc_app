@@ -9,6 +9,6 @@
 <body>
     <h1>計算アプリ</h1>
     <h2>{{ $kekka }}</h2>
-    
+
 </body>
 </html>
